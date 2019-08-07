@@ -33,7 +33,7 @@ break;
 
 case 3:
 printf("CHECKING WEATHER THE SLL IN PALINDROME OR NOT\n\n");
-printf("%d\n", isPalindrome());
+isPalindrome();
 break;
 
 default: printf("WRONG INPUT\n");
@@ -91,6 +91,56 @@ temp = temp->next;
 
 int isPalindrome()
 {
+
+    // Taking the help of other data structure
+    
+    int cow=0,count=0;
+
+    struct node *temp, *temp1;
+
+
+    temp = start;
+    temp1 = start;
+    while(temp!=NULL){
+        count++;
+        temp = temp->next;
+    }
+
+        temp = start;
+
+    for(int i=0; i<(int)(count/2); i++){
+        
+        int pos=0;
+
+        if(temp!=NULL && pos!=i){
+            temp = temp->next;
+        }
+
+        int set = count -i;
+        while(set--){
+            temp1 = temp1->next;
+        }
+
+        if(temp->data == temp1->data){
+            cow++;
+        }
+        else{
+            printf("THIS IS NOT PLAINDROME\n\n");
+            //return 0;
+        }
+    }
+
+    if(cow == (int)(count/2)){
+        printf("YES IT IS\n\n");
+    }
+    else
+    {
+        printf("DONT KNOW\n\n");
+
+    }
+    
+
+    return 0;
     
     /*
     struct node *temp, *hea, *prev, *sp, *head;
