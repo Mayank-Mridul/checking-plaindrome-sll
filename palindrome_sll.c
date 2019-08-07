@@ -89,11 +89,63 @@ temp = temp->next;
 }
 
 
-int isPalindrome()
-{
+void isPalindrome(){
 
     // Taking the help of other data structure
-    
+
+    struct node *temp=0;
+
+    int count = 0, mid =0, c=0;
+
+    temp = start;
+
+    while(temp!=NULL){
+        temp = temp->next;
+        count++;
+    }
+
+    temp = NULL;
+
+    if(count%2!=0){
+        mid = count/2 + 1;
+    }
+
+    int arr[mid];
+
+    int loop = mid;
+
+    temp = start;
+
+    while(loop--){
+        temp = temp->next;
+    }
+
+    for(int i=0; i<mid ; i++){
+        temp = temp->next;
+        arr[i] = temp->data;
+    }
+
+    temp = NULL;
+
+    temp = start;
+
+    for(int j=0;j<mid;j++){
+        if(temp->data == arr[j]){
+                c++;
+        }
+        temp = temp->next;
+    }
+
+    if(c == (mid-1)){
+        printf("YES!!!!!!!!!!!");
+    }
+    else{
+        printf("NO!!!!!!");
+    }
+}
+
+
+    /* 
     int cow=0,count=0;
 
     struct node *temp, *temp1;
@@ -141,6 +193,8 @@ int isPalindrome()
     
 
     return 0;
+
+    */
     
     /*
     struct node *temp, *hea, *prev, *sp, *head;
@@ -223,4 +277,3 @@ int isPalindrome()
      */
 
      
-}
