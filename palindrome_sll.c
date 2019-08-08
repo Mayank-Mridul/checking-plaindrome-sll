@@ -145,6 +145,8 @@ void isPalindrome(){
 }
 
 
+//Creating  new way do to this
+
     /* 
     int cow=0,count=0;
 
