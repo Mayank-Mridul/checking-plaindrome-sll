@@ -93,6 +93,8 @@ void isPalindrome(){
 
     // Taking the help of other data structure
 
+    // Hope this will help me to get the paloondrome of the SLL
+
     struct node *temp=0;
 
     int count = 0, mid =0, c=0;
